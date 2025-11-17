@@ -1,0 +1,41 @@
+/* Geral */
+body header nav {
+    background: #060b18;
+    color: #e7eefe;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    padding: 20px;
+}
+
+.logo {
+    height: 150px;
+    text-align: left;
+}
+
+/* Botão */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #ffd633;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #ffeb7a;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
+    color: #8da3c6;
+}
