@@ -62,12 +62,12 @@ nav a:hover {
     border-color: #72e2ff;
 }
 
-/* ===== MAIN (PÁGINA INICIAL) ===== */
+/* ===== MAIN PADRÃO (USADO NAS SUAS OUTRAS PÁGINAS) ===== */
 .inicio-content {
     text-align: center;
     width: 100%;
     max-width: 700px;
-    margin: auto; /* centraliza horizontal */
+    margin: 50px auto; 
     padding: 50px 50px;
 
     background: #00000030;  
@@ -91,11 +91,22 @@ nav a:hover {
     margin-bottom: 25px;
 }
 
-/* ===== BOTÃO JOGAR ===== */
+/* ===== CENTRALIZAÇÃO EXCLUSIVA PARA A PÁGINA DE CONTATO ===== */
+/* Esta regra centraliza o formulário vertical e horizontalmente */
+main.contato-page {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ===== BOTÃO GERAL ===== */
 .btn {
     display: inline-block;
-    padding: 8px 20px; /* igual nav a */
-    font-size: 16px;   
+    padding: 8px 20px;
+    font-size: 16px;    
     font-weight: bold;
 
     background: linear-gradient(135deg, #0a1a3d, #0b2a68, #153a9e);
@@ -127,5 +138,59 @@ footer {
     text-align: left;
     background: #050d25;
     box-shadow: 0 -1px 10px rgb(41, 26, 158);
-    margin-top: auto; /* empurra o footer para baixo */
+    margin-top: auto;
+}
+
+/* ===== FORMULÁRIO (ISOLADO) ===== */
+.contato-form {
+    max-width: 600px; 
+    width: 90%; 
+    margin: 0; 
+    background: #00000030;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ffffff22;
+    box-shadow: 0 0 20px #00000080;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.contato-form label {
+    font-weight: bold;
+    margin-bottom: -10px;
+    font-size: 1.1em;
+}
+
+.contato-form input,
+.contato-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #5ecbff;
+    background: #0b0f23;
+    color: #ffffff;
+    font-size: 16px;
+    box-shadow: inset 0 0 8px #5ecbff33;
+    box-sizing: border-box; 
+}
+
+.contato-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+    outline: none;
+    border-color: #72e2ff;
+    box-shadow: 0 0 10px #72e2ff88, inset 0 0 8px #72e2ff33;
+}
+
+.contato-form .btn {
+    align-self: center;
+    padding: 10px 30px;
 }
