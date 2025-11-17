@@ -23,10 +23,12 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px 25px;
+    flex-wrap: wrap; /* permite quebrar em telas pequenas */
 }
 
 .logo {
     width: 110px;
+    margin-bottom: 10px; /* para mobile, separa do menu */
 }
 
 /* ===== NAV ===== */
@@ -34,6 +36,8 @@ nav {
     display: flex;
     gap: 15px;
     margin-left: auto;
+    flex-wrap: wrap; /* quebra linhas em telas pequenas */
+    justify-content: center; /* centraliza no mobile */
 }
 
 nav a {
@@ -62,7 +66,7 @@ nav a:hover {
     border-color: #72e2ff;
 }
 
-/* ===== MAIN PADRÃO (USADO NAS SUAS OUTRAS PÁGINAS) ===== */
+/* ===== MAIN PADRÃO ===== */
 .inicio-content {
     text-align: center;
     width: 100%;
@@ -91,13 +95,12 @@ nav a:hover {
     margin-bottom: 25px;
 }
 
-/* ===== CENTRALIZAÇÃO EXCLUSIVA PARA A PÁGINA DE CONTATO ===== */
-/* Esta regra centraliza o formulário vertical e horizontalmente */
+/* ===== CENTRALIZAÇÃO PÁGINA DE CONTATO ===== */
 main.contato-page {
     flex-grow: 1;
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
+    justify-content: center;
+    align-items: center;
     padding: 20px;
     box-sizing: border-box;
 }
@@ -141,7 +144,7 @@ footer {
     margin-top: auto;
 }
 
-/* ===== FORMULÁRIO (ISOLADO) ===== */
+/* ===== FORMULÁRIO ===== */
 .contato-form {
     max-width: 600px; 
     width: 90%; 
@@ -187,10 +190,63 @@ footer {
 .contato-form textarea:focus {
     outline: none;
     border-color: #72e2ff;
-    box-shadow: 0 0 10px #72e2ff88, inset 0 0 8px #72e2ff33;
+    box-shadow: 0 0 10px #72e2ff88, inset 0 0 8px #5ecbff33;
 }
 
 .contato-form .btn {
     align-self: center;
     padding: 10px 30px;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* Tablets (768px) */
+@media (max-width: 768px) {
+    .inicio-content {
+        padding: 30px 20px;
+    }
+
+    nav a {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .foguete {
+        height: 150px;
+    }
+}
+
+/* Celulares (480px) */
+@media (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        margin-left: 0;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .inicio-content {
+        padding: 20px 15px;
+    }
+
+    .foguete {
+        height: 120px;
+    }
+
+    .contato-form {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .contato-form label {
+        font-size: 1em;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 6px 15px;
+    }
 }
